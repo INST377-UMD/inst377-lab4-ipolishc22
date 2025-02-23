@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(146, 220, 229);
+  }
+  
+  .content-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    width: 90%;
+    float: left;
+    margin: 10;
+  }
+  
+  .content-box {
+    text-align: center;
+    background-color: rgb(156, 0, 228);
+    color: rgb(255, 255, 255);
+    border: 7px solid rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 15px;
+    margin: 5px;
+  }
+  
+

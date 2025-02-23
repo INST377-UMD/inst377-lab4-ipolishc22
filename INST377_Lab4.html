@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>INST377 - Lab 4</title>
+    <link rel="stylesheet" href="INST377_Lab4.css">
+</head>
+
+<body>
+    <h1 id="header">INST377 - Lab 4</h1>
+    <div class="main-container">
+        <div class="content-area">
+            <div class="content-box">
+                <form>
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" required>
+                    <button type="button" onclick="sayHi()">Alert Me!</button>
+                </form>
+            </div>
+            <div class="content-box">
+                <button type="" onclick="colorChange()">Change Color!</button>
+            </div>
+            <div class="content-box">
+                <form>
+                    <label for="name">Text Tester: </label>
+                    <input type="text" id="someWords">
+                    <button type="button" onclick="validateText()">Validate Text</button>
+                </form>
+            </div>
+            <div class="content-box">
+                <button type="" onclick="addText()">Add Text</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        function sayHi(){
+            var name = document.getElementById('name').value;
+            alert("Hello " + name)
+        }   
+
+        function colorChange(){
+            console.log('Attempting to change color of background, current color is: ', document.body.style.backgroundColor)
+
+            if (document.body.style.backgroundColor == "rgb(146, 220, 229)") {
+                document.body.style.backgroundColor = 'green';
+            } else {
+                document.body.style.backgroundColor = 'rgb(146, 220, 229)';
+            }
+
+            console.log('Successfully changed color of background, new color is: ', document.body.style.backgroundColor)
+        }
+        
+        
+        function validateText(){
+            console.log('Validating user input:', document.getElementById('someWords').value)
+            const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            let inputField = document.getElementById('someWords')
+            let inputText = inputField.value.trim();
+
+            if (inputText == "") {
+                alert("Input cannot be empty!");
+                return false;
+            }   
+            if (validationRegex.test(inputText)) {
+                alert('There are characters in your input that are not allowed')
+                return false;
+
+            } else {
+                inputField.value = "";
+                return false;
+
+            }
+        }
+
+        function addText(){
+            let heading = document.getElementById('header');
+            if (!heading.innerText.includes("Add Text")) {
+                heading.innerText += " Add Text";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
